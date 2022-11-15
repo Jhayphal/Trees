@@ -2,12 +2,12 @@
 
 namespace Trees
 {
-    public interface IRecordSet<TSource, TKey, TValue>
+  public interface IRecordSet<TSource, TKey, TValue>
     where TKey : IEquatable<TKey>, IComparable<TKey>
   {
-    bool EOF { get; }
-    bool MoveNext();
     TKey ReadKey();
     TValue ReadValue();
+    void MoveNext();
+    bool EOF { get; }
   }
 }
